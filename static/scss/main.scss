@@ -1,0 +1,507 @@
+@import "reset";
+@import "fonts";
+
+@mixin button {
+  background: #ed1c24;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  @media screen and (max-width: 767px) {
+    font-size: 20px;
+  }
+}
+
+@mixin count {
+  .count {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    & > div {
+      max-width: 58px;
+      padding: 10px 15px;
+      background: #FFD42C;
+      width: 100%;
+      font-size: 44px;
+      font-weight: lighter;
+      border-radius: 8px;
+      text-align: center;
+    }
+  }
+  .button {
+    padding: 20px 15px;
+    @include button;
+  }
+}
+
+body {
+  font-family: NotoSans;
+}
+
+.counter {
+  padding: 125px 0 200px;
+  background: url("../img/banner-bg.png");
+  background-size: cover;
+  background-position: bottom;
+  @media screen and (max-width: 540px) {
+    background: url("../img/banner-bg-mobile.png");
+    background-size: cover;
+    background-position: bottom;
+  }
+  h2 {
+    font-family: NotoSans-bold;
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 160%;
+    text-transform: uppercase;
+    @media screen and (max-width: 991px) {
+      font-size: 24px;
+    }
+  }
+  p {
+    max-width: 520px;
+    width: 100%;
+    font-size: 18px;
+    line-height: 160%;
+    @media screen and (max-width: 991px) {
+      font-size: 14px;
+    }
+  }
+  .wrapper {
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+  &__left {
+    max-width: 710px;
+    width: 100%;
+    @media screen and (max-width: 767px) {
+      margin-bottom: 20px;
+    }
+  }
+  &__right {
+    max-width: 396px;
+    width: 100%;
+    @media screen and (max-width: 767px) {
+      max-width: 315px;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 395px;
+    width: 100%;
+    background: #fff;
+    padding: 44px 40px;
+    border-radius: 6px;
+    @media screen and (max-width: 767px) {
+      padding: 40px 20px;
+    }
+    .title {
+      font-family: NotoSans-bold;
+      text-align: center;
+      margin-bottom: 20px;
+      & > span {
+        color: #ed1c24;
+        text-transform: uppercase;
+      }
+    }
+    @include count;
+    .footer {
+      text-align: center;
+      color: #808080;
+      font-size: 14px;
+      span {
+        color: #ed1c24;
+        font-weight: bold;
+        font-size: 18px;
+        &.through {
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}
+
+.advantages {
+  margin-bottom: 120px;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: 991px) {
+      flex-wrap: wrap;
+    }
+    .advantage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #333;
+      @media screen and (max-width: 991px) {
+        max-width: 50%;
+        width: 100%;
+        margin-bottom: 50px;
+      }
+      img {
+        margin-bottom: 40px;
+      }
+      p {
+        font-family: NotoSans-bold;
+        font-size: 36px;
+      }
+      span {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.slogan, .abouts-slogan {
+  margin-bottom: 120px;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      margin-bottom: 32px;
+    }
+    .title {
+      font-size: 16px;
+      color: #787878;
+      margin-bottom: 10px;
+    }
+    p {
+      font-family: NotoSans-bold;
+      font-size: 44px;
+      line-height: 60px;
+      text-align: center;
+
+      @media screen and (max-width: 991px) {
+        font-size: 24px;
+        line-height: 33px;
+      }
+
+      &.font-size-24 {
+        font-size: 24px;
+        @media screen and (max-width: 991px) {
+          font-size: 20px;
+          line-height: 33px;
+        }
+      }
+    }
+    span {
+      &.yellow {
+        color: #FFD42C;
+      }
+      &.red {
+        color: #ED1C24;
+      }
+    }
+  }
+}
+
+.abouts-slogan {
+  margin-bottom: 70px;
+}
+
+.description {
+  margin-bottom: 120px;
+  &__wrapper {
+    .paragraph {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      &:not(:last-child) {
+        margin-bottom: 120px;
+        @media screen and (max-width: 767px) {
+          margin-bottom: 50px;
+        }
+      }
+      .col-md-3 {
+        text-align: center;
+        @media screen and (max-width: 767px) {
+          text-align: left;
+        }
+      }
+      &.reverse{
+        @media screen and (max-width: 767px) {
+          flex-direction: column-reverse;
+        }
+      }
+    }
+    .header {
+      @media screen and (max-width: 991px) {
+        display: flex;
+        flex-direction: column;
+      }
+      .col-md-3 {
+        @media screen and (max-width: 991px) {
+          text-align: center;
+          margin-top: 30px;
+        }
+      }
+      p {
+        font-size: 24px;
+        line-height: 30px;
+        color: #333;
+        @media screen and (max-width: 767px) {
+          font-size: 14px;
+          line-height: 20px;
+        }
+        &.bold {
+          font-family: NotoSans-bold;
+          font-size: 32px;
+          line-height: 36px;
+          color: #000;
+          margin-bottom: 32px;
+          @media screen and (max-width: 767px) {
+            font-size: 22px;
+            line-height: 28px;
+          }
+        }
+      }
+    }
+    p {
+      font-size: 18px;
+      line-height: 24px;
+      color: #333;
+      @media screen and (max-width: 767px) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      &.bold {
+        font-family: NotoSans-bold;
+        font-size: 28px;
+        line-height: 32px;
+        color: #000;
+        margin-bottom: 32px;
+        @media screen and (max-width: 767px) {
+          font-size: 22px;
+          line-height: 28px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    img{
+      @media screen and (max-width: 767px) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.horizont {
+  padding: 50px 0;
+  margin-bottom: 120px;
+  background: #ffd42c;
+  @media screen and (max-width: 767px) {
+    padding-bottom: 0;
+  }
+  @media screen and (max-width: 540px) {
+    background: url("../img/horizont-bg.png");
+    background-size: cover;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    h4 {
+      font-family: NotoSans-bold;
+      font-size: 44px;
+      line-height: 120%;
+      margin-bottom: 60px;
+      color: #000;
+      @media screen and (max-width: 767px) {
+        font-size: 26px;
+        line-height: 32px;
+      }
+    }
+    .button {
+      padding: 15px 32px;
+      @include button;
+      @media screen and (max-width: 767px) {
+        font-size: 20px;
+        padding: 15px 20px;
+        max-width: 300px;
+        width: 100%;
+      }
+    }
+    .col-sm-5{
+      @media screen and (max-width: 767px) {
+        text-align: center;
+      }
+    }
+    img{
+      width: 100%;
+      @media screen and (max-width: 767px) {
+        margin-top: 20px;
+        max-width: 300px;
+      }
+    }
+  }
+}
+
+.sentences {
+  margin-bottom: 120px;
+  h3 {
+    font-family: NotoSans-bold;
+    font-size: 44px;
+    margin-bottom: 50px;
+    color: #000;
+    @media screen and (max-width: 767px) {
+      text-align: center;
+      font-size: 28px;
+      line-height: 36px;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .sentence {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media screen and (max-width: 767px) {
+        &:not(:last-child){
+          margin-bottom: 30px;
+        }
+      }
+      img {
+        margin-bottom: 20px;
+      }
+      p {
+        font-family: NotoSans-bold;
+        font-size: 22px;
+        margin-bottom: 10px;
+        line-height: 28px;
+        color: #000;
+        @media screen and (max-width: 767px) {
+          text-align: center;
+        }
+      }
+      span {
+        font-size: 15px;
+        color: #787878;
+        line-height: 160%;
+        @media screen and (max-width: 767px) {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.abouts {
+  margin-bottom: 120px;
+  &__wrapper{
+    @media screen and (max-width: 767px) {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    .col-sm-4{
+      @media screen and (max-width: 767px) {
+        display: flex;
+        justify-content: center;
+      }
+      img {
+        max-width: 300px;
+        width: 100%;
+      }
+    }
+  }
+  &__slider {
+    .owl-dots{
+      button{
+        background: none;
+        border: none;
+        outline: none;
+        span{
+          background: transparent !important;
+          border: 1px solid #FCB800;
+        }
+        &.active{
+          span{
+            background: #FCB800 !important;
+          }
+        }
+      }
+    }
+    .about {
+      position: relative;
+      padding: 34px 0 0 40px;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 68px;
+        height: 68px;
+        background: url("../img/left-quote.png");
+        background-size: cover;
+        z-index: -1;
+      }
+      p {
+        color: #333;
+        font-size: 32px;
+        line-height: 150%;
+        font-family: NotoSans-bold;
+        margin-bottom: 30px;
+        @media screen and (max-width: 991px) {
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+      img{
+        width: auto !important;
+        max-width: 200px;
+      }
+    }
+  }
+}
+
+.try-zelwin {
+  background: url("../img/try-bg.png");
+  background-size: cover;
+  padding: 66px 0;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    h3 {
+      font-family: NotoSans-bold;
+      font-size: 44px;
+      line-height: 60px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      @media screen and (max-width: 767px) {
+        font-size: 32px;
+        line-height: 36px;
+      }
+      span.red {
+        color: #ED1C24;
+      }
+    }
+    p {
+      max-width: 780px;
+      width: 100%;
+      font-size: 16px;
+      margin-bottom: 55px;
+      line-height: 22px;
+    }
+    .count_wrapper {
+      display: flex;
+      flex-direction: column;
+      max-width: 315px;
+      width: 100%;
+      @include count;
+    }
+  }
+}
